@@ -267,6 +267,7 @@ main {
         border-radius: 20px;
         background-color: var(--police-w);
         cursor: pointer;
+        width: 30%;
         img {
           height: 380px;
           width: 100%;

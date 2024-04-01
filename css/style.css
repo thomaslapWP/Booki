@@ -1,0 +1,311 @@
+@import "responsive.css";
+@import "utils.css";
+/* TODO
+
+     */
+/*  header */
+header {
+  padding: 0 50px;
+  height: 79px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 5%;
+    min-width: 100px;
+  }
+  nav {
+    height: 100%;
+    display: flex;
+    gap: 38px;
+  }
+
+  a {
+    padding: 30px;
+    border-top: 3px solid var(--police-w);
+  }
+
+  a:hover {
+    padding-top: 30px;
+    border-color: var(--main-color);
+    color: var(--main-color);
+  }
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0 50px;
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    .info-title-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .info-form {
+      display: flex;
+      width: max-content;
+      height: 49px;
+      i {
+        height: 49px;
+        display: grid;
+        place-items: center;
+        color: var(--police-b);
+        width: 50px;
+        background-color: var(--main-bg-color);
+        border-radius: 15px 0 0 15px;
+      }
+      input {
+        border: 1px solid var(--main-bg-color, #f2f2f2);
+        background: #fff;
+        color: var(--police-b);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+      }
+
+      button {
+        background-color: var(--main-color);
+        color: var(--police-w);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 0px 15px 15px 0px;
+        border: 1px solid var(--main-color);
+        cursor: pointer;
+        padding: 0 16px;
+        &:hover {
+          filter: brightness(90%);
+          transition: filter 0.5s;
+        }
+
+        &:before {
+          content: "Rechercher";
+        }
+      }
+    }
+
+    .info-filter-container {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      .filter-container {
+        display: flex;
+        gap: 15px;
+        & > div {
+          height: 50px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 25px;
+          padding: 0 19px;
+          border: 2px solid var(--secondary-color);
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          cursor: pointer;
+        }
+
+        & > div:hover {
+          background-color: #deebff;
+          transition: background-color 0.5s;
+        }
+      }
+    }
+    .message-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      i {
+        text-align: center;
+        border: 2px solid var(--main-bg-color);
+        padding: 5px 10px;
+        border-radius: 50%;
+        /* clip-path: circle(); */
+      }
+    }
+  }
+
+  /****** Hebergements And Populaires ***********/
+  .hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    & > section {
+      background-color: var(--main-bg-color);
+      border-radius: 20px;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    /****** Hebergements ***********/
+    .hebergements {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: repeat(auto, auto);
+        grid-gap: 30px;
+        place-items: center;
+
+        a {
+          width: 250px;
+          height: 192px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          img {
+            border-radius: 15px 15px 0 0;
+            object-fit: cover;
+            width: 100%;
+            height: 110px;
+          }
+          .card-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0 10px;
+          }
+          .card-rating {
+            padding: 0 10px;
+          }
+        }
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        color: var(--police-b);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        /* letter-spacing: 0.8px; */
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    /****** Populaires ***********/
+    .populaires {
+      .populaires-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .populaires-cards .card {
+        display: flex;
+        margin-top: 33px;
+        min-width: 274px;
+      }
+
+      .populaires-cards img {
+        width: 33%;
+        height: 136px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      .populaires-cards .card-content {
+        width: 67%;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+
+      .populaires-cards .card-title {
+        margin-top: 10px;
+        margin-bottom: 4px;
+      }
+
+      .populaires-cards .card-subtitle {
+        margin: 0;
+      }
+
+      .populaires-cards .card-rating {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .activity {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px;
+
+    .activity-card-container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+      .activity-card {
+        height: 436px;
+        box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 20px;
+        background-color: var(--police-w);
+        cursor: pointer;
+        img {
+          height: 380px;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        h3 {
+          padding: 14px 19px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  .footer-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+    .footer-list-title {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    li {
+      list-style: none;
+    }
+  }
+}

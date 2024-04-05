@@ -1,4 +1,4 @@
-@import "responsive.css";
+/* @import "responsive.css"; */
 @import "utils.css";
 /* TODO
 
@@ -159,14 +159,16 @@ main {
 
       .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        grid-template-rows: repeat(auto, auto);
-        grid-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
         place-items: center;
-
+        width: 100%;
         a {
-          width: 250px;
-          height: 192px;
+          width: calc(100% - 60px / 3);
+          min-height: 192px;
+
           display: flex;
           flex-direction: column;
           gap: 4px;
@@ -176,17 +178,24 @@ main {
             width: 100%;
             height: 110px;
           }
+
           .card-text {
             display: flex;
             flex-direction: column;
             gap: 8px;
             padding: 0 10px;
+            text-wrap: none;
           }
-          .card-rating {
-            padding: 0 10px;
+          .card-title {
+            font-size: clamp(12px, 16px, 18vw);
           }
         }
       }
+
+      .card-container {
+        grid-template-rows: repeat(auto, auto);
+      }
+
       button {
         background-color: transparent;
         border: none;
@@ -286,27 +295,30 @@ main {
 footer {
   background-color: var(--main-bg-color);
   display: flex;
-  flex-direction: column;
-  padding: 0 50px;
-  .footer-container {
+  align-items: flex-start;
+
+  width: 100%;
+  padding: 20px;
+  section {
+    width: 30%;
+    margin-left: 30px;
+  }
+  .footer-list-title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 15px;
+  }
+  ul {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 80%;
-    padding: 20px;
-    .footer-list-title {
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    li {
-      list-style: none;
-    }
+    flex-direction: column;
+    gap: 15px;
+  }
+  li {
+    list-style: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }
